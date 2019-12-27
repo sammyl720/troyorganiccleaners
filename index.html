@@ -144,7 +144,7 @@
     </section>
     <section id="contact">
 
-        <form name='contact-form' netlify class="form">
+        <form name='contact-form' data-netlify-recaptcha="true" netlify class="form">
             <h2>Contact Us</h2>
             <div class="input-group">
                 <label for="email">
@@ -170,6 +170,7 @@
                 </label>
                 <textarea rows="5" cols="22" name="message" id="message"></textarea>
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <button type="submit">Send</button>
         </form>
     </section>
