@@ -235,7 +235,7 @@ footer {
     justify-content: space-between;
 }
 
-.dayofweek>: @media(max-width:599px) {
+@media(max-width:599px) {
     .logo {
         left: 50%;
         transform: translateX(-50%);
@@ -304,7 +304,6 @@ footer {
         text-align: center;
     }
     .textbox {
-        width: 100vw;
         padding: 40px;
         text-align: justify;
     }
