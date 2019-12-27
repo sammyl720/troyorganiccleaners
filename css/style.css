@@ -90,7 +90,6 @@
     justify-content: space-evenly;
     background-image: url('https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
     background-size: cover;
-    background-attachment: fixed;
 }
 
 #contact>h2 {
@@ -167,6 +166,9 @@ footer {
 }
 
 @media(min-width:600px) {
+    #contact {
+        background-attachment: fixed;
+    }
     .burger {
         display: none;
     }
@@ -264,7 +266,6 @@ footer {
         height: calc(100vh - 50px);
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
         background-position: 34%;
     }
     .picture:before {
