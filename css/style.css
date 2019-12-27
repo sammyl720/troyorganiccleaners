@@ -12,7 +12,7 @@
     height: 50px;
     position: absolute;
     left: 15px;
-    background-image: url('/imgs/logo.png');
+    background-image: url('../imgs/logo.png');
     background-size: cover;
     background-position: center;
     border-radius: 50%;
