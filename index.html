@@ -86,7 +86,7 @@
             </div>
         </nav>
     </header>
-    <div class="picture"></div>
+    <div class="picture" onclick="hideMobileNav()"></div>
     <main id="main" class="main">
         <div class="textbox">
             <h1 class="title">
@@ -124,7 +124,7 @@
         <div>
             <h3 class="service-title">Wash & Fold</h3>
             <p class="service-description">
-                Is the laundry basket piling up? Have family and friends coming from out of town? With your busy day to day schedule you need a break from time to time; Just hand us your laundry baskets and we'll hand it back <span style='font-weight:bold;font-style:italic;'>Wash & folded</span>.
+                Is the laundry basket piling up? Have family and friends coming from out of town? With your busy day to day schedule you need a break from time to time; Just hand us your laundry baskets and we'll hand it back <span style='font-weight:bold;font-style:italic;'>Washed & folded</span>.
             </p>
         </div>
         <div>
@@ -147,6 +147,12 @@
         <form name='contact-form' data-netlify-recaptcha="true" netlify class="form">
             <h2>Contact Us</h2>
             <div class="input-group">
+                <label for="name">
+                    Name
+                </label>
+                <input name='name' id='name' type="text" required>
+            </div>
+            <div class="input-group">
                 <label for="email">
                     E-mail
                 </label>
@@ -168,7 +174,7 @@
                 <label for="message">
                     Message
                 </label>
-                <textarea rows="5" cols="22" name="message" id="message"></textarea>
+                <textarea rows="5" cols="22" name="message" id="message" required></textarea>
             </div>
             <div data-netlify-recaptcha="true" style="margin: 10px;"></div>
             <button type="submit">Send</button>

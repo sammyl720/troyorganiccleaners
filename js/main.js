@@ -13,7 +13,7 @@ burger.addEventListener('click', ()=> {
 
   }
 })
-console.log(mobileLinks)
+// console.log(mobileLinks)
 for (let i = 0; i < mobileLinks.length; i++) {
   mobileLinks[i].addEventListener('click', () => {
     hideMobileNav()

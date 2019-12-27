@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
@@ -42,6 +43,7 @@
     height: 500px;
     margin: 15px auto;
     box-sizing: border-box;
+    overflow-y: visible;
 }
 
 .services-section {
@@ -52,7 +54,7 @@
     padding: 50px 0;
     grid-gap: 50px;
     /* height: 100vh; */
-    background-image: url('https://images.pexels.com/photos/2387818/pexels-photo-2387818.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-image: url('https://cdn.pixabay.com/photo/2014/12/15/15/36/cloth-569222__340.jpg');
     background-size: cover;
 }
 
@@ -128,7 +130,7 @@ button {
 }
 
 button:hover {
-    box-shadow: 4px 4px 12px -10px black;
+    box-shadow: 4px 4px 12px -5px black;
 }
 
 .input-group {
