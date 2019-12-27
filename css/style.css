@@ -113,6 +113,12 @@ form {
     border-radius: 2px;
 }
 
+.textbox {
+    width: 100vw;
+    padding: 40px;
+    text-align: justify;
+}
+
 button {
     outline: none;
     border: none;
@@ -231,7 +237,7 @@ footer {
     justify-content: space-between;
 }
 
-@media(max-width:599px) {
+.dayofweek>: @media(max-width:599px) {
     .logo {
         left: 50%;
         transform: translateX(-50%);
@@ -298,11 +304,6 @@ footer {
     }
     .title {
         text-align: center;
-    }
-    .textbox {
-        width: 100vw;
-        padding: 40px;
-        text-align: justify;
     }
     .services-section>div {
         width: 100vw;
