@@ -1,17 +1,25 @@
 const burger = document.getElementById('burger');
 let mobileNav = document.getElementById('mobile-nav');
+const mobileLinks = document.querySelectorAll('.menu > .nav-link')
 
-let menuVisible = false;
 burger.addEventListener('click', ()=> {
   // console.log(mobileNav)
-  if(burger.dataset.open === 'true'){
-
+  if (burger.dataset.open === 'true') {
     burger.dataset.open = 'false'
-    mobileNav.style.transform = 'translateX(-105%)'
-  }else{
+    hideMobileNav()
+  } else {
     burger.dataset.open = 'true'
     mobileNav.style.transform = 'translateX(0%)'
-    
+
   }
-  
 })
+console.log(mobileLinks)
+for (let i = 0; i < mobileLinks.length; i++) {
+  mobileLinks[i].addEventListener('click', () => {
+    hideMobileNav()
+  })
+}
+
+const hideMobileNav = () => {
+  mobileNav.style.transform = 'translateX(-105%)'
+}
