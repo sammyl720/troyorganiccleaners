@@ -74,7 +74,8 @@
     padding: 50px;
 }
 
-.service-description {
+.service-description,
+.service-description>a {
     font-size: 24px;
 }
 
@@ -110,7 +111,7 @@ form {
     padding: 30px;
     width: 50%;
     min-width: 360px;
-    min-height: 70%;
+    min-height: 75%;
     background-color: rgba(236, 233, 233, 0.9);
     color: black;
     box-shadow: 4px 4px 10px -8px black;
@@ -124,7 +125,7 @@ button {
     background-color: green;
     padding: 10px 15px;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 5px;
     cursor: pointer;
     width: 80%;
@@ -304,7 +305,7 @@ footer {
         height: calc(100vh - 50px);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 34%;
+        background-position: 33%;
     }
     .picture:before {
         position: absolute;

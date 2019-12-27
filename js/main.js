@@ -21,5 +21,7 @@ for (let i = 0; i < mobileLinks.length; i++) {
 }
 
 const hideMobileNav = () => {
+  burger.dataset.open = 'false'
+
   mobileNav.style.transform = 'translateX(-105%)'
 }
