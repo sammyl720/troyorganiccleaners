@@ -268,30 +268,32 @@ footer {
         height: 100px;
     }
     .burger {
-        width: 20px;
-        height: 3px;
-        /* border: 1px solid black; */
-        background-color: black;
         position: absolute;
         left: 25px;
         top: 25px;
         border: 3px solid white;
         box-sizing: content-box;
         cursor: pointer;
+        transition: transform 500ms;
     }
-    .burger:before,
-    .burger:after {
-        content: "";
-        position: absolute;
-        background-color: black;
-        width: 100%;
+    .burger>span {
+        width: 20px;
         height: 3px;
+        display: block;
+        margin: 3px;
+        background-color: black;
     }
-    .burger:before {
-        top: -7px;
+    .burger[data-open='true']>span:nth-child(1) {
+        transform: rotate(45deg);
     }
-    .burger:after {
-        top: 7px;
+    .burger[data-open='true'] {
+        transform: rotate(90deg);
+    }
+    .burger[data-open='true']>span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger[data-open='true']>span:nth-child(3) {
+        transform: rotate(-45deg);
     }
     .picture {
         margin-top: 0;
