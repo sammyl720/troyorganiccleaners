@@ -110,7 +110,7 @@ form {
     padding: 30px;
     width: 50%;
     min-width: 360px;
-    height: 70%;
+    min-height: 70%;
     background-color: rgba(236, 233, 233, 0.9);
     color: black;
     box-shadow: 4px 4px 10px -8px black;
