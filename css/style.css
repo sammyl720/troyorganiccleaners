@@ -62,7 +62,6 @@
 
 .services-section>div {
     background-color: white;
-    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -260,7 +259,7 @@ footer {
     }
     .picture {
         margin-top: 0;
-        background-image: url('/imgs/logo.svg');
+        background-image: url('../imgs/logo.svg');
         width: 100vw;
         height: calc(100vh - 50px);
         background-size: cover;
