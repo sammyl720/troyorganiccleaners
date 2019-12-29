@@ -261,6 +261,9 @@ footer {
 }
 
 @media(max-width:599px) {
+    #about {
+        height: 150vh;
+    }
     #contact {
         width: 100vw;
         padding: 4px;
