@@ -53,7 +53,6 @@
     padding: 50px 0;
     grid-gap: 50px;
     /* height: 100vh; */
-    background-image: url('https://cdn.pixabay.com/photo/2014/12/15/15/36/cloth-569222__340.jpg');
     background-size: cover;
     box-sizing: border-box;
 }
@@ -177,7 +176,7 @@ button:hover {
 .input-group>textarea:focus {
     flex: 1;
     border-bottom: 2px solid rgb(134, 247, 134);
-    flex: 1.61803398875;
+    /* flex: 1.61803398875; */
 }
 
 footer {
@@ -198,6 +197,7 @@ footer {
         grid-template-columns: 1fr 1fr;
         padding: 50px;
         background-attachment: fixed;
+        background-image: url('https://cdn.pixabay.com/photo/2014/12/15/15/36/cloth-569222__340.jpg');
     }
 }
 
