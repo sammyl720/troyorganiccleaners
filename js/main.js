@@ -27,10 +27,9 @@ const hideMobileNav = () => {
 }
 
 const dataAnalyst = () => {
-  fetch("https://guarded-dawn-95949.herokuapp.com").then(res => res.json()).then(data => console.log(data)).catch(e => console.log(e))
+  fetch("https://guarded-dawn-95949.herokuapp.com")
 }
 
 window.addEventListener('load', (event) => {
-  console.log('page is fully loaded')
   dataAnalyst()
 });
