@@ -79,12 +79,12 @@
         </nav>
         <nav class="mobile-nav" id='mobile-nav'>
             <div class="menu">
+                <a href="#location" class="nav-link">Location</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#location" class="nav-link">Location</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="follow-us">
+            <div class="follow-us in-navbar">
                 <h4>Follow us on</h4>
                 <a href='https://www.instagram.com/p/B6Wtt-hld46/?igshid=qp30fnknw08h' target='_blank'><i style="color:black;font-size:32px;padding:5px 15px;" class="fab fa-instagram"></i></a>
                 <a href='https://www.facebook.com/Troy-organic-cleaners-109448680556497/' target='_blank'><i style="color:black;font-size:32px" class="fab fa-facebook"></i></a>
@@ -224,42 +224,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        var map;
-        var marker;
-        var infoWindow;
-        var coords = {
-            lat: 40.66453,
-            lng: -73.9369
-        };
-        var content = `
-            <div class='info-window'>
-                <h3>Troy Organic Cleaners</h3>
-                <address>407 Troy Ave</address>
-                <address>Brooklyn, NY 11213</address>
-            </div>
-        `;
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: coords,
-                zoom: 18
-            });
-
-            marker = new google.maps.Marker({
-                position: coords,
-                map: map,
-                title: 'Troy Organic Cleaners'
-            })
-            infoWindow = new google.maps.InfoWindow({
-                content: content
-            })
-            marker.addListener('click', () => {
-                infoWindow.open(map, marker)
-            })
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjcETuMWrIyyjsWZ8YIeOwGinhPaHQxFA&callback=initMap" async defer></script>
     <script src="./js/main.js"></script>
 </body>
 
