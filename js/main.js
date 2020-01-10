@@ -32,7 +32,7 @@ const dataAnalyst = () => {
 
 const upBtn = document.querySelector('.up')
 const toggleUpBtn = () => {
-  if (document.documentElement.scrollTop < window.innerHeight - 300) {
+  if (document.documentElement.scrollTop < window.innerHeight - 300 ||document.documentElement.scrollTop < screen.height - 300 ) {
     upBtn.style.opacity = 0
     upBtn.style.pointerEvents = 'none'
 
