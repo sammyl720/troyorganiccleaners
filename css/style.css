@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+}
+
+body {
+    scroll-behavior: smooth;
 }
 
 .logo {
@@ -36,6 +42,49 @@
     font-weight: 800;
 }
 
+.location-link::after {
+    content: "\f14e";
+}
+
+.contact-link::after {
+    content: "\f086"
+}
+
+.about-link::after {
+    content: "\f059"
+}
+
+.services-link::after {
+    content: '\f085';
+}
+
+.icons::after {
+    font-family: 'FontAwesome';
+    -webkit-font-feature-settings: 'liga' 1;
+    -moz-font-feature-settings: 'liga' 1;
+    font-feature-settings: 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+    height: 100%;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.7em;
+    padding-left: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+
 #map {
     min-width: 60vw;
     max-width: 90vw;
@@ -61,9 +110,17 @@
     box-sizing: border-box;
 }
 
-.service-title {
-    font-size: 32px;
+.services-section h1 {
+    grid-area: 1/1/2/-1;
     text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+}
+
+.service-title {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 3px;
 }
 
 .services-section>div {
@@ -200,6 +257,19 @@ footer {
     padding: 20px;
     text-align: justify;
     font-size: 12px;
+}
+
+.up {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    background: #edf7faa2;
+    color: #1b262c;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
 }
 
 @media(min-width:800px) {
@@ -344,7 +414,7 @@ footer {
         height: calc(100vh - 50px);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 33%;
+        background-position: 33%
     }
     .picture:before {
         position: absolute;

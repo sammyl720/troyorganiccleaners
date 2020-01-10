@@ -30,6 +30,22 @@ const dataAnalyst = () => {
   fetch("https://guarded-dawn-95949.herokuapp.com")
 }
 
+const upBtn = document.querySelector('.up')
+const toggleUpBtn = () => {
+  if (document.documentElement.scrollTop < window.innerHeight - 300) {
+    upBtn.style.opacity = 0
+    upBtn.style.pointerEvents = 'none'
+
+  } else {
+    upBtn.style.opacity = 1
+    upBtn.style.pointerEvents = 'auto'
+  }
+}
+
 window.addEventListener('load', (event) => {
   dataAnalyst()
-});
+  window.onscroll = toggleUpBtn
+  upBtn.addEventListener('click', _ => {
+    window.scrollTo(0, 0)
+  })
+})
