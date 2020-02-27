@@ -553,21 +553,22 @@ footer {
 }
 
 .wa-link {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     color: #1f6650;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     text-decoration: none;
-    background: rgba(0, 0, 0, 0.14);
+    background: rgba(196, 196, 196, 0.8);
     padding: 5px;
     border-radius: 6px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.13);
 }
 
 .wa {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    margin-left: 2px;
+    margin-left: 5px;
 }
