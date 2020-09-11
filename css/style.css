@@ -448,12 +448,14 @@ footer {
 @media(max-width: 450px){
     .services-section {
         margin: auto;
-        background-color: rgba(235, 235, 235, 0.39);
+        /* background-color: rgba(235, 235, 235, 0.39); */
+        background-image: url(https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
 
     }
     .services-section > div {
-        background-color: rgba(233, 217, 217, 0.39);
-        box-shadow: inset -2px -2px 24px rgba(0, 0, 0, 0.2), inset 2px 2px 24px rgba(0, 0, 0, 0.2);
+        /* background-color: rgba(240, 231, 231, 0.39); */
+        background-color: rgba(241, 239, 233, 0.829);
+        box-shadow: inset -1px -1px 28px rgba(0, 0, 0, 0.1), inset 1px 1px 28px rgba(0, 0, 0, 0.1);
         line-height: 22px;
 
     }
@@ -461,7 +463,7 @@ footer {
         font-weight: 900;
         margin-bottom: 22px;
         font-size: 28px;
-        line-height: 22px;
+        line-height: 32px;
     }
     .service-description {
         /* width: 100%; */
