@@ -435,15 +435,39 @@ footer {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
+    padding: 20px;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    font-weight: 900;
+    font-size: larger;
+}
+
+@media(max-width: 400px){
+    
 }
 
 @media(max-width:599px) {
     #contact {
         width: 100vw;
         padding: 4px;
+    }
+    .main{
+        width: 100%;
+        background-image: url('../imgs/logo.png');
+        background-position: center;
+        background-size: cover;
+        height: calc(100vh - 50px);
+        opacity: 0.5;
+        /* z-index: 1; */
+        position: relative;
+    }
+    .textbox{
+        background-color: rgba(255, 255, 255, 0.808);
+        /* z-index: 20; */
+        /* border: 1px solid black; */
+        opacity: 1;
+        position: relative;
     }
     .contact-info {
         width: 95%;
@@ -470,7 +494,7 @@ footer {
         -ms-flex-direction: column;
         flex-direction: column;
         width: 50vw;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 1);
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -484,6 +508,7 @@ footer {
         -webkit-transform: translate(-105%);
         -ms-transform: translate(-105%);
         transform: translate(-105%);
+        z-index: 100;
     }
     .menu>.nav-link {
         display: block;
@@ -556,6 +581,7 @@ footer {
     }
 }
 
+ 
 .wa-link {
     font-size: 16px;
     font-weight: 800;
