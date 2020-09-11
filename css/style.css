@@ -14,6 +14,7 @@
 
 body {
     scroll-behavior: smooth;
+    max-width: 100vw;
 }
 
 .logo {
@@ -117,6 +118,7 @@ body {
     grid-template-columns: 1fr;
     padding: 50px 0;
     grid-gap: 50px;
+    margin: auto;
     /* height: 100vh; */
     background-size: cover;
     -webkit-box-sizing: border-box;
@@ -443,8 +445,33 @@ footer {
     font-size: larger;
 }
 
-@media(max-width: 400px){
-    
+@media(max-width: 450px){
+    .services-section {
+        margin: auto;
+        background-color: rgba(235, 235, 235, 0.39);
+
+    }
+    .services-section > div {
+        background-color: rgba(233, 217, 217, 0.39);
+        box-shadow: inset -2px -2px 24px rgba(0, 0, 0, 0.2), inset 2px 2px 24px rgba(0, 0, 0, 0.2);
+        line-height: 22px;
+
+    }
+    .service-title{
+        font-weight: 900;
+        margin-bottom: 22px;
+        font-size: 28px;
+        line-height: 22px;
+    }
+    .service-description {
+        /* width: 100%; */
+        text-align: center;
+        margin-top: 22px;
+        margin: auto;
+        font-size: 16px;
+        /* padding: 20px; */
+        max-width: 90%;
+    }
 }
 
 @media(max-width:599px) {
