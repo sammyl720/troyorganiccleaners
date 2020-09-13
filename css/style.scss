@@ -377,8 +377,8 @@ footer {
     }
     .textbox {
         position: absolute;
-        bottom: 10%;
-        right: 5%;
+        bottom: -10%;
+        right: -5%;
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -400,7 +400,7 @@ footer {
     }
     .title {
         color: rgb(48, 33, 33);
-        font-size: 42px;
+        font-size: 2rem;
     }
     .mobile-nav {
         display: none;
