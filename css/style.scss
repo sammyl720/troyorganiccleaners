@@ -482,12 +482,16 @@ footer {
         width: 100vw;
         padding: 4px;
     }
+    header {
+        position: absolute;
+        z-index: 100;
+    }
     .main{
         width: 100%;
         background-image: url('../imgs/logo.png');
         background-position: center;
         background-size: cover;
-        height: calc(100vh - 50px);
+        height: 100vh;
         opacity: 0.5;
         /* z-index: 1; */
         position: relative;
