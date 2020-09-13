@@ -443,9 +443,6 @@ footer {
 }
 
 @media (max-width: 599px) {
-  .picture {
-    background-attachment: fixed;
-  }
   .services-section {
     margin: auto;
     overflow: hidden;
@@ -608,6 +605,7 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 33%;
+    background-attachment: scroll;
   }
   .picture:before {
     position: absolute;
