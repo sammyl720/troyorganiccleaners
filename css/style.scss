@@ -497,7 +497,17 @@ footer {
         /* z-index: 20; */
         /* border: 1px solid black; */
         opacity: 1;
-        position: relative;
+        padding: 40px;
+        text-align: justify;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
     }
     .contact-info {
         width: 95%;
