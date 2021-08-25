@@ -1,7 +1,7 @@
 const burger = document.getElementById('burger');
 let mobileNav = document.getElementById('mobile-nav');
 const mobileLinks = document.querySelectorAll('.menu > .nav-link')
-
+const dismissMessageBtn = document.getElementById("dismiss");
 burger.addEventListener('click', ()=> {
   // console.log(mobileNav)
   if (burger.dataset.open === 'true') {
@@ -18,6 +18,23 @@ for (let i = 0; i < mobileLinks.length; i++) {
   mobileLinks[i].addEventListener('click', () => {
     hideMobileNav()
   })
+}
+
+// remove the element with id message when someone clicks the dismiss button or the user scrolls down or when the user clicks outside of the message
+const dismissMessage = () => {
+  dismissMessageBtn.addEventListener('click', () => {
+    document.getElementById('message').remove()
+  })
+  document.body.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('message') && !e.target.parentNode.classList.contains('message')) {
+      document.getElementById('message').remove()
+    }
+  })
+}
+
+// add the dismissMessage function to onload
+window.onload = () => {
+  dismissMessage()
 }
 
 const hideMobileNav = () => {
