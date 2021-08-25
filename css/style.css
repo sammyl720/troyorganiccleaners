@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
@@ -7,7 +8,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
 
@@ -52,31 +53,31 @@ body {
 }
 
 .location-link::after {
-  content: "\f14e";
+  content: "";
 }
 
 .contact-link::after {
-  content: "\f086";
+  content: "";
 }
 
 .about-link::after {
-  content: "\f059";
+  content: "";
 }
 
 .services-link::after {
-  content: '\f085';
+  content: "";
 }
 
 .icons::after {
-  font-family: 'FontAwesome';
-  -webkit-font-feature-settings: 'liga' 1;
-  font-feature-settings: 'liga' 1;
+  font-family: "FontAwesome";
+  -webkit-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga" 1;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  -webkit-font-feature-settings: 'liga';
-  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
   height: 100%;
   font-weight: normal;
   font-style: normal;
@@ -298,7 +299,7 @@ button:hover {
   /* flex: 1.61803398875; */
   outline: none;
   border: none;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .input-group > input:focus,
@@ -350,14 +351,15 @@ footer {
     background-image: url("https://cdn.pixabay.com/photo/2014/12/15/15/36/cloth-569222__340.jpg");
   }
 }
-
 @media (min-width: 600px) {
   #contact {
     background-attachment: fixed;
   }
+
   .burger {
     display: none;
   }
+
   .main {
     overflow-y: hidden;
     width: 100%;
@@ -369,16 +371,17 @@ footer {
     background-attachment: fixed;
     position: relative;
   }
+
   .textbox {
     position: absolute;
     top: 50%;
     right: -5%;
     padding: 30px;
     text-align: justify;
-    -webkit-box-sizing: initial;
-            box-sizing: initial;
+    box-sizing: initial;
     font-size: 1.2rem;
     -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: #fffffa;
     display: -webkit-box;
@@ -396,21 +399,24 @@ footer {
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
   }
+
   .title {
     color: #302121;
     font-size: 2rem;
   }
+
   .mobile-nav {
     display: none;
   }
+
   .about-info > p {
     font-size: 1.4rem;
   }
+
   .form {
     width: 400px;
   }
 }
-
 .hours {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,18 +454,20 @@ footer {
     overflow: hidden;
     background-color: rgba(241, 239, 233, 0.2);
   }
+
   .services-section > div {
     background-color: rgba(241, 239, 233, 0.3);
-    -webkit-box-shadow: -5px -5px 40px rgba(150, 141, 118, 0.2), 5px 5px 40px rgba(150, 141, 118, 0.2);
-            box-shadow: -5px -5px 40px rgba(150, 141, 118, 0.2), 5px 5px 40px rgba(150, 141, 118, 0.2);
+    box-shadow: -5px -5px 40px rgba(150, 141, 118, 0.2), 5px 5px 40px rgba(150, 141, 118, 0.2);
     line-height: 22px;
   }
+
   .service-title {
     font-weight: 900;
     margin-bottom: 22px;
     font-size: 28px;
     line-height: 32px;
   }
+
   .service-description {
     /* width: 100%; */
     text-align: center;
@@ -471,16 +479,17 @@ footer {
     max-width: 90%;
   }
 }
-
 @media (max-width: 599px) {
   #contact {
     width: 100vw;
     padding: 4px;
   }
+
   header {
     position: absolute;
     z-index: 100;
   }
+
   .main {
     width: 100%;
     background-image: url("../imgs/logo.png");
@@ -491,6 +500,7 @@ footer {
     /* z-index: 1; */
     position: relative;
   }
+
   .textbox {
     background-color: rgba(255, 255, 255, 0.808);
     /* z-index: 20; */
@@ -503,31 +513,27 @@ footer {
     bottom: 0;
     right: 0;
     position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
   }
+
   .contact-info {
     width: 95%;
   }
+
   .logo {
     left: 50%;
     -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
   }
+
   .nav > .nav-link:not(.logo) {
     display: none;
   }
+
   .mobile-nav {
     position: absolute;
     left: 0;
@@ -549,16 +555,20 @@ footer {
     justify-content: space-around;
     -webkit-transition: -webkit-transform 500ms;
     transition: -webkit-transform 500ms;
+    -o-transition: transform 500ms;
     transition: transform 500ms;
     transition: transform 500ms, -webkit-transform 500ms;
     -webkit-transform: translate(-105%);
+    -ms-transform: translate(-105%);
     transform: translate(-105%);
     z-index: 100;
   }
+
   .menu > .nav-link {
     display: block;
     height: 100px;
   }
+
   .burger {
     position: absolute;
     left: 25px;
@@ -569,9 +579,11 @@ footer {
     cursor: pointer;
     -webkit-transition: -webkit-transform 500ms;
     transition: -webkit-transform 500ms;
+    -o-transition: transform 500ms;
     transition: transform 500ms;
     transition: transform 500ms, -webkit-transform 500ms;
   }
+
   .burger > span {
     width: 20px;
     height: 3px;
@@ -579,24 +591,33 @@ footer {
     margin: 3px;
     background-color: black;
   }
-  .burger[data-open='true'] > span:nth-child(1) {
+
+  .burger[data-open=true] > span:nth-child(1) {
     -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-  .burger[data-open='true'] {
+
+  .burger[data-open=true] {
     -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
   }
-  .burger[data-open='true'] > span:nth-child(2) {
+
+  .burger[data-open=true] > span:nth-child(2) {
     opacity: 0;
   }
-  .burger[data-open='true'] > span:nth-child(3) {
+
+  .burger[data-open=true] > span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
+
   .follow-us.in-navbar {
     margin-bottom: 70px;
   }
+
   .picture {
     margin-top: 0;
     background-image: url("../imgs/mobile-hero.png");
@@ -607,41 +628,37 @@ footer {
     background-position: 33%;
     background-attachment: scroll;
   }
+
   .picture:before {
     position: absolute;
     top: 50px;
   }
+
   .title {
     text-align: center;
   }
+
   .textbox {
     padding: 40px;
     text-align: justify;
   }
+
   .services-section > div {
     width: 100vw;
   }
 }
-
 .wa-link {
   font-size: 16px;
   font-weight: 800;
   color: #1f6650;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
   text-decoration: none;
   background: rgba(196, 196, 196, 0.8);
   padding: 5px;
   border-radius: 6px;
-  -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.13);
-          box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.13);
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.13);
 }
 
 .wa {
@@ -650,4 +667,60 @@ footer {
   border-radius: 50%;
   margin-left: 5px;
 }
+
+.message {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 2rem;
+  left: 2rem;
+  width: calc(100vw - 4rem);
+  height: calc(100vh - 4rem);
+  padding: 20px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.13);
+  z-index: 1000;
+  line-height: 200%;
+}
+.message .dismiss {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #05241a;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #05241a;
+  transition: 1s;
+}
+.message > h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #05241a;
+  margin-bottom: 2rem;
+}
+.message > p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #05241a;
+}
+.message a {
+  font-style: bold;
+  font-size: 1.2rem !important;
+  font-weight: 400;
+  color: #071527;
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */

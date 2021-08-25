@@ -644,3 +644,61 @@ footer {
     border-radius: 50%;
     margin-left: 5px;
 }
+
+// a message component with a heading and a message that has 2 links
+.message {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 2rem;
+    left: 2rem;
+    width: calc(100vw - 4rem);
+    height: calc(100vh - 4rem);
+    padding: 20px;
+    background: rgba(255, 255, 255,1);
+    border-radius: 6px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.13);
+    z-index: 1000;
+    line-height: 200%;
+    & .dismiss {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid #05241a;
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:#05241a;
+        transition: 1s;
+    }
+    & > h4 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #05241a;
+        margin-bottom: 2rem;
+    }
+
+    & > p {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #05241a;
+    }
+    
+    &  a {
+        font-style: bold;
+        font-size: 1.2rem !important;
+        font-weight: 400;
+        color: #071527;
+        text-decoration: none;
+        margin: 0;
+        cursor: pointer;
+    }
+}
