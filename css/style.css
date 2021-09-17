@@ -677,12 +677,19 @@ footer {
   left: 4rem;
   width: calc(100vw - 8rem);
   height: calc(100vh - 8rem);
+  flex-direction: column;
   padding: 20px;
   background: white;
   border-radius: 6px;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.13);
   z-index: 1000;
   line-height: 2rem;
+}
+.message .sched-img {
+  margin: 0 auto;
+  justify-self: center;
+  max-width: 92%;
+  height: auto;
 }
 .message .dismiss {
   position: absolute;
@@ -707,8 +714,14 @@ footer {
   color: #05241a;
   margin-bottom: 2rem;
 }
+.message > h2 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  color: #05241a;
+  font-weight: 800;
+}
 .message > p {
-  margin: 0;
+  margin: 0.25rem 0;
   font-size: 1.2rem;
   font-weight: 400;
   color: #05241a;
@@ -721,6 +734,15 @@ footer {
   text-decoration: none;
   margin: 0;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .message {
+    top: 4rem;
+    left: 1rem;
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 8rem);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
