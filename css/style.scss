@@ -726,3 +726,44 @@ footer {
        
     }
 }
+
+// summer hour modal
+.summer-hours-modal {
+    position: absolute;
+    padding: 1rem;
+    
+    background: #fffffa;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    padding: 1rem;
+    background: rgb(255, 255, 250);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    top: 170px;
+    width: clamp(300px,80vw, 600px);
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 3px 2px 12px rgba(0,0,0,0.4);
+    opacity: 0.98;
+
+
+    @media screen and (min-width: 800px) {
+        top: 100px;
+        left: unset;
+        right: -65px;
+        width: 300px;
+    }
+
+    .dayofweek {
+        margin: 12px 0;
+    }
+
+    .summer-hours-more {
+        margin-top: 48px;
+        line-height: 24px;
+    }
+}
+
+// end summer hour modal
