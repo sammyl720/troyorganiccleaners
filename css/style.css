@@ -754,8 +754,8 @@ footer {
   background: #fffffa;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
-  top: 170px;
+  z-index: 2;
+  top: 60px;
   width: clamp(300px, 80vw, 600px);
   text-align: center;
   border-radius: 12px;
