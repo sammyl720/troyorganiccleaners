@@ -131,12 +131,14 @@ body {
   text-align: center;
   font-size: 2.2rem;
   letter-spacing: 3px;
+  line-height: 3rem;
 }
 
 .service-title {
   font-size: 2rem;
   text-align: center;
   letter-spacing: 3px;
+  line-height: 150%;
 }
 
 .services-section > div {
@@ -155,13 +157,17 @@ body {
   justify-content: space-around;
   text-align: justify;
   word-wrap: break-word;
-  min-width: 400px;
   padding: 50px;
+  max-width: 800px;
+  box-shadow: 1px 1px 12px -6px rgba(150, 141, 118, 0.2), 5px 5px 40px rgba(150, 141, 118, 0.2);
+  margin-inline: auto;
+  border-radius: 4px;
 }
 
 .service-description,
 .service-description > a {
   font-size: 24px;
+  line-height: 32px;
 }
 
 #about {
@@ -343,8 +349,7 @@ footer {
 
 @media (min-width: 800px) {
   .services-section {
-    -ms-grid-columns: 1fr 50px 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 50px;
     background-attachment: fixed;
     background-image: url("https://cdn.pixabay.com/photo/2014/12/15/15/36/cloth-569222__340.jpg");
@@ -445,6 +450,7 @@ footer {
   justify-content: space-between;
   font-weight: 900;
   font-size: larger;
+  gap: 16px;
 }
 
 @media (max-width: 599px) {
@@ -456,8 +462,7 @@ footer {
 
   .services-section > div {
     background-color: rgba(241, 239, 233, 0.3);
-    box-shadow: -5px -5px 40px rgba(150, 141, 118, 0.2), 5px 5px 40px rgba(150, 141, 118, 0.2);
-    line-height: 22px;
+    padding: 2rem;
   }
 
   .service-title {
@@ -643,7 +648,7 @@ footer {
   }
 
   .services-section > div {
-    width: 100vw;
+    width: 96vw;
   }
 }
 .wa-link {
