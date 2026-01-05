@@ -405,8 +405,11 @@ footer {
   }
   .textbox {
     background-color: rgba(255, 255, 255, 0.808);
-    /* z-index: 20; */
-    /* border: 1px solid black; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
     opacity: 1;
     padding: 40px;
     text-align: justify;
