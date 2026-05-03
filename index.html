@@ -5,62 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="./imgs/logo.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="./imgs/logo.png">
+    <link rel="icon" href="./imgs/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="./imgs/apple-touch-icon.png">
+    <link rel="icon" href="./imgs/icon-192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="./imgs/icon-512.png" sizes="512x512" type="image/png">
+    <meta name="theme-color" content="#0e5660">
     <meta name="description"
         content="Organic dry cleaning at 407 Troy avenue. Wash & Fold. Custom tailoring. Free Local Pick Up and Delivery">
+    <link rel="canonical" href="https://troyorganiccleaners.com/">
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="Troy Organic Cleaners">
+    <meta property="og:description" content="Organic dry cleaning, wash and fold, tailoring, and free local pickup and delivery in Brooklyn.">
+    <meta property="og:url" content="https://troyorganiccleaners.com/">
+    <meta property="og:image" content="https://troyorganiccleaners.com/imgs/logo.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Troy Organic Cleaners">
+    <meta name="twitter:description" content="Organic dry cleaning, wash and fold, tailoring, and free local pickup and delivery in Brooklyn.">
+    <meta name="twitter:image" content="https://troyorganiccleaners.com/imgs/logo.png">
 
     <meta name='keywords' content='Dry Cleaner, Tailor, Organic, Brooklyn, Wash & fold, Laundry'>
     <script src="https://kit.fontawesome.com/808b432e5f.js" crossorigin="anonymous"></script>
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "DryCleaningOrLaundry",
-            "@id": "http://troyorganiccleaners.com",
-            "name": "Troy Organic Cleaners",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "407 troy avenue",
-                "addressLocality": "Brooklyn",
-                "addressRegion": "NY",
-                "postalCode": "11203",
-                "addressCountry": "US"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 40.6644229,
-                "longitude": -73.9369867
-            },
-            "url": "https://troyorganiccleaners.com",
-            "openingHoursSpecification": [{
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday"
-                ],
-                "opens": "8:00",
-                "closes": "19:00"
-            }, {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Sunday"
-                ],
-                "opens": "10:00",
-                "closes": "16:00"
-            }, {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Friday",
-                "opens": "8:00",
-                "closes": "15:30"
-            }],
-            "telephone": "(718) 771-8769",
-            "logo": "http://troyorganiccleaners.com/imgs/logo.png",
-            "image": "http://troyorganiccleaners.com/imgs/logo.png"
-        }
-    </script>
+    <script type="application/ld+json" id="schema-data"></script>
 
     <link rel="stylesheet" href="./css/style.css">
 
@@ -70,177 +37,206 @@
 <body>
     <header>
         <nav class="nav">
-            <div class="burger close" data-open='false' id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <a href="#main" class="logo nav-link "></a>
+            <button class="burger close" data-open='false' id="burger" type="button" aria-label="Open navigation menu" aria-controls="mobile-nav" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+            <a href="#main" class="logo nav-link" aria-label="Troy Organic Cleaners home"></a>
             <a href="#services" class="nav-link services-link icons">Services</a>
-            <a href="#picture" class="nav-link about-link icons">About</a>
+            <a href="#about" class="nav-link about-link icons">Organic Care</a>
             <a href="#location" class="nav-link location-link icons">Location</a>
             <a href="#contact" class="nav-link contact-link icons">Contact</a>
+            <a href='tel:+17187718769' class="nav-cta">Call Now</a>
         </nav>
-        <nav class="mobile-nav" id='mobile-nav'>
+        <nav class="mobile-nav" id='mobile-nav' aria-hidden="true">
             <div class="menu">
-                <a href="#location" class="nav-link location-link icons">Location</a>
                 <a href="#services" class="nav-link services-link icons">Services</a>
+                <a href="#about" class="nav-link about-link icons">Organic Care</a>
+                <a href="#location" class="nav-link location-link icons">Location</a>
                 <a href="#contact" class="nav-link contact-link icons">Contact</a>
-                <a href="#picture" class="nav-link about-link icons">About</a>
             </div>
             <div class="follow-us in-navbar">
                 <h4>Follow us on</h4>
-                <a href='https://www.instagram.com/troycleaners' target='_blank'><i
-                        style="color:black;font-size:32px;padding:5px 15px;" class="fab fa-instagram"></i></a>
-                <a href='https://www.facebook.com/Troy-organic-cleaners-109448680556497/' target='_blank'><i
-                        style="color:black;font-size:32px" class="fab fa-facebook"></i></a>
+                <a href='https://www.instagram.com/troycleaners' target='_blank' rel="noopener noreferrer" aria-label="Follow Troy Organic Cleaners on Instagram"><i
+                        class="fab fa-instagram social-icon social-icon-dark social-icon-spaced"></i></a>
+                <a href='https://www.facebook.com/Troy-organic-cleaners-109448680556497/' target='_blank' rel="noopener noreferrer" aria-label="Follow Troy Organic Cleaners on Facebook"><i
+                        class="fab fa-facebook social-icon social-icon-dark"></i></a>
 
             </div>
         </nav>
     </header>
-    <div class="picture" id="picture" onclick="hideMobileNav()"></div>
 
     <main id="main" class="main">
-        <div class="textbox" onclick="hideMobileNav()">
-            <h5 class="title">Hours</h5>
-            <div class="dayofweek"><span>Sunday</span> <span> 10am - 4pm</span></div>
-            <div class="dayofweek"><span>Monday</span> <span>8am - 7pm</span></div>
-            <div class="dayofweek"><span>Tuesday</span> <span>8am - 7pm</span></div>
-            <div class="dayofweek"><span>Wednesday</span> <span>8am - 7pm</span></div>
-            <div class="dayofweek"><span>Thursday</span> <span>8am - 7pm</span></div>
-            <div class="dayofweek"><span>Friday</span> <span>8am - 3:30pm</span></div>
-        </div>
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow">407 Troy Ave, Brooklyn</p>
+                <h1 id="hero-title">Troy Organic Cleaners</h1>
+                <p class="hero-summary">
+                    Organic dry cleaning, wash-and-fold, careful tailoring, and free local pickup and delivery from a neighborhood shop that knows your clothes.
+                </p>
+                <div class="hero-actions">
+                    <a href='tel:+17187718769' class="button button-primary">Call Now</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=407%20Troy%20Ave%2C%20Brooklyn%2C%20NY%2011213" target="_blank" rel="noopener noreferrer" class="button button-secondary">Get Directions</a>
+                    <a target="_blank" rel="noopener noreferrer" class="button button-whatsapp" href="https://wa.me/17187718769">WhatsApp</a>
+                </div>
+            </div>
+            <aside class="hours-card" aria-labelledby="hours-title">
+                <h2 id="hours-title">Hours</h2>
+                <div class="dayofweek"><span>Sunday</span> <span>10am - 4pm</span></div>
+                <div class="dayofweek"><span>Monday</span> <span>8am - 7pm</span></div>
+                <div class="dayofweek"><span>Tuesday</span> <span>8am - 7pm</span></div>
+                <div class="dayofweek"><span>Wednesday</span> <span>8am - 7pm</span></div>
+                <div class="dayofweek"><span>Thursday</span> <span>8am - 7pm</span></div>
+                <div class="dayofweek"><span>Friday</span> <span>8am - 3:30pm</span></div>
+                <div class="dayofweek dayofweek-closed"><span>Saturday</span> <span>Closed</span></div>
+            </aside>
+        </section>
     </main>
 
-    <section id="location" class="location" style="text-align: center;">
-        <h1>Location</h1>
-        <p>
-            <span>Troy Organic Cleaners</span>
-        <address>407 Troy Ave</address>
-        <address>Brooklyn, NY 11213</address>
-        <a href='tel:(718) 771-8769' style="color: white;text-decoration:none;">(718) 771-8769</a>
-        </p>
-        <div id="map"></div>
-    </section>
-    <section class="services-section" id='services'>
-        <h1>Services</h1>
-        <div>
+    <section class="services-section" id='services' aria-labelledby="services-title">
+        <div class="section-heading">
+            <p class="eyebrow">Garment care</p>
+            <h2 id="services-title">Services for the weekly drop-off and the important outfit.</h2>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tshirt service-icon" aria-hidden="true"></i>
             <h3 class="service-title">Dry Cleaning</h3>
             <p class="service-description">
-                Need your shirts, pants, and dresses crisp and clean? Just bring it to our location at 407 Troy avenue
-                and we'll take care of the rest. You'll be looking stylish in no time.
+                Shirts, pants, dresses, suits, and everyday garments cleaned with an organic process and finished crisp.
             </p>
         </div>
-        <div>
+        <div class="service-card">
+            <i class="fas fa-soap service-icon" aria-hidden="true"></i>
             <h3 class="service-title">Wash & Fold</h3>
             <p class="service-description">
-                Is the laundry basket piling up? Have family and friends coming from out of town? Do you just need a
-                break from doing laundry? Just hand us your laundry baskets and we'll hand it back washed & folded.
+                Drop off the week’s laundry and get it back clean, fresh, folded, and ready for the closet.
             </p>
         </div>
-        <div>
+        <div class="service-card">
+            <i class="fas fa-cut service-icon" aria-hidden="true"></i>
             <h3 class="service-title">Custom Tailoring</h3>
             <p class="service-description">
-                Just got a new suit that's a little too long? Your favorite shirt just got a rip? No sweat. We offer on
-                site professional tailoring. We'll get that nice new suit of yours fitting you perfectly.
+                On-site tailoring for hems, repairs, suit adjustments, and the small fit details that change how clothing feels.
+            </p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-truck service-icon" aria-hidden="true"></i>
+            <h3 class="service-title">Pickup & Delivery</h3>
+            <p class="service-description">
+                Free local pickup and delivery makes garment care easier when your week is already full.
             </p>
         </div>
     </section>
-    <section id="about">
-        <h1>About us</h1>
+
+    <section id="about" class="about-section" aria-labelledby="about-title">
+        <div class="about-panel" aria-label="Troy Organic Cleaners care standards">
+            <div class="about-panel-mark" aria-hidden="true"></div>
+            <p class="eyebrow">Care standards</p>
+            <ul>
+                <li><span>20+</span> years of organic dry-cleaning experience</li>
+                <li><span>4</span> core services for everyday garment care</li>
+                <li><span>407</span> Troy Ave neighborhood storefront</li>
+            </ul>
+        </div>
         <div class="about-info">
+            <p class="eyebrow">Organic care, local standards</p>
+            <h2 id="about-title">Cleaned without harsh traditional dry-cleaning chemicals.</h2>
             <p>
-                What differentiates us is the way we clean, the way we tailor, and the way we treat our customers: Our
-                entire cleaning process is strictly organic. We don’t use any harmful chemicals in our cleaning process.
-                This process is better for you, better for
-                your clothing, and better for the environment. Unfortunately, there is a lack of awareness of the
-                harmful chemicals widely used in traditional dry cleaning. One example is Tetrachloroethylene, a
-                synthetic chemical often used in dry cleaning,
-                which the IARC (International Agency for Research on Cancer) considers to be a cause of a variety of
-                cancers, and in a NIH (National Institutes of Health) study was found to raise the risk of Parkinson’s
-                disease. Not only are these chemicals
-                harmful to you, they’re harmful to your clothing, and detrimental to the environment. In my experience,
-                organic cleaning cleans clothing just as well, if not better, than traditional dry cleaning, without the
-                chemicals.
+                Our cleaning process is strictly organic, chosen to be better for your clothing, better for your home, and better for the environment.
+            </p>
+            <p class="owner-note">
+                Toli has worked in dry cleaning since he was a teenager, with more than 20 years of experience in organic garment care.
             </p>
             <p>
-                We also invested in the best tailoring operation. Some people think of tailoring as a simple process,
-                but that simple process done wrong can be extremely frustrating. Over my years in the industry, I’ve
-                worked with many tailors. When we opened this business,
-                we reached out to the most skilled tailor I’ve worked with, and told him, “We need you”. We also
-                invested in the best machinery, to help our tailor do what he does best.
+                The shop also invests in skilled tailoring and professional equipment, so repairs, hems, and suit adjustments get the same level of care as the cleaning.
             </p>
-            <p>
-                At Troy Organic Cleaners, we also differentiate ourselves by the way we treat our customers. At Troy
-                Organic Cleaners, we believe that a satisfied customer is the best business strategy. Unfortunately,
-                good customer service is a dwindling commodity. Customers
-                who recognize me from other establishments I’ve managed, know that I greet every customer with a smile.
-                I also greet customers by their names (which I know before I put their number into the system). The
-                importance of good customer service
-                can not be overstated.
-            </p>
+            <blockquote>
+                <span>I have always had a passion for fashion and quality attire.</span>
+                "If you treat your suits well, they will treat you well."
+                <cite>Meet Toli</cite>
+            </blockquote>
         </div>
     </section>
-    <section id="contact">
-        <p class="wa-paragraph">
-            <a target="_blank" class="wa-link" href="https://wa.me/17187718769">You can now contact us directly on
-                <img class="wa" src="./imgs/wa2.png" alt="whatsapp link"></a>
-        </p>
-        <h1>Contact Us</h1>
-        <form name='contact-form' netlify class="form">
+
+    <section id="location" class="location" aria-labelledby="location-title">
+        <div class="location-details">
+            <p class="eyebrow">Visit the shop</p>
+            <h2 id="location-title">407 Troy Ave, Brooklyn</h2>
+            <address>
+                <span>Troy Organic Cleaners</span>
+                <span>407 Troy Ave</span>
+                <span>Brooklyn, NY 11213</span>
+                <a href='tel:+17187718769' class="contact-link-phone">(718) 771-8769</a>
+            </address>
+            <div class="location-actions">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=407%20Troy%20Ave%2C%20Brooklyn%2C%20NY%2011213" target="_blank" rel="noopener noreferrer" class="button button-primary">Get Directions</a>
+                <a target="_blank" rel="noopener noreferrer" class="button button-secondary" href="https://wa.me/17187718769">Message on WhatsApp</a>
+            </div>
+        </div>
+        <a id="map" href="https://www.google.com/maps/dir/?api=1&destination=407%20Troy%20Ave%2C%20Brooklyn%2C%20NY%2011213" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Troy Organic Cleaners"></a>
+    </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Send a message to the shop.</h2>
+        </div>
+        <form name='contact-form' method="POST" data-netlify="true" data-netlify-recaptcha="true" class="form">
+            <input type="hidden" name="form-name" value="contact-form">
             <div class="input-group">
                 <label for="name">
                     Name
                 </label>
-                <input name='name' id='name' type="text" required>
+                <input name='name' id='name' type="text" autocomplete="name" required>
             </div>
             <div class="input-group">
                 <label for="email">
                     E-mail
                 </label>
-                <input name='email' id='email' type="email" required>
+                <input name='email' id='email' type="email" autocomplete="email" required>
             </div>
             <div class="input-group">
                 <label for="phone">
                     Phone
                 </label>
-                <input type="tel" name="phone" id="phone">
+                <input type="tel" name="phone" id="phone" autocomplete="tel" inputmode="tel">
             </div>
             <div class="input-group">
                 <label for="subject">
                     Subject
                 </label>
-                <input name='subject' type="text" name='subject'>
+                <input name='subject' id='subject' type="text" autocomplete="off" maxlength="120">
             </div>
             <div class="input-group">
                 <label for="message">
                     Message
                 </label>
-                <textarea rows="5" cols="22" name="message" id="message" required></textarea>
+                <textarea rows="5" cols="22" name="message" id="message" autocomplete="off" required></textarea>
             </div>
-            <div data-netlify-recaptcha="true" style="margin: 10px;"></div>
-            <button type="submit">Send</button>
+            <div data-netlify-recaptcha="true" class="recaptcha"></div>
+            <button class="submit-button" type="submit">Send Message</button>
         </form>
     </section>
     <span class="up"><i class="fas fa-arrow-up"></i></span>
-    <footer>
+    <footer id="site-footer">
         <div class="container">
             <div class="follow-us">
-                <h4 style="display: inline;">Follow us on</h4>
-                <a href='https://www.instagram.com/troycleaners' target='_blank'><i
-                        style="color:white;font-size:32px;padding:5px 5px 5px 15px;" class="fab fa-instagram"></i></a>
-                <a href='https://www.facebook.com/Troy-organic-cleaners-109448680556497/' target='_blank'><i
-                        style="color:white;font-size:32px;padding:5px 5px;" class="fab fa-facebook"></i></a>
+                <h4 class="footer-social-title">Follow us on</h4>
+                <a href='https://www.instagram.com/troycleaners' target='_blank' rel="noopener noreferrer" aria-label="Follow Troy Organic Cleaners on Instagram"><i
+                        class="fab fa-instagram social-icon social-icon-light social-icon-footer-first"></i></a>
+                <a href='https://www.facebook.com/Troy-organic-cleaners-109448680556497/' target='_blank' rel="noopener noreferrer" aria-label="Follow Troy Organic Cleaners on Facebook"><i
+                        class="fab fa-facebook social-icon social-icon-light social-icon-footer"></i></a>
 
             </div>
             <div class="contact-info">
-                <h1 style="display:none">Contact Information</h1>
-                <p>
+                <h1 class="visually-hidden">Contact Information</h1>
+                <address>
                     <span>Troy Organic Cleaners</span>
-                <address>407 Troy Ave</address>
-                <address>Brooklyn, NY 11213</address>
-                <a href='tel:(718) 771-8769' style="color: white;text-decoration:none;">(718) 771-TROY</a>
-                </p>
+                    <span>407 Troy Ave</span>
+                    <span>Brooklyn, NY 11213</span>
+                    <a href='tel:+17187718769' class="contact-link-phone">(718) 771-TROY</a>
+                </address>
             </div>
         </div>
     </footer>

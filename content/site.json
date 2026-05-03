@@ -1,0 +1,200 @@
+{
+  "seo": {
+    "title": "Troy Organic Cleaners",
+    "description": "Organic dry cleaning at 407 Troy Ave. Wash & Fold. Custom tailoring. Free local pickup and delivery.",
+    "themeColor": "#0e5660",
+    "canonical": "https://troyorganiccleaners.com/",
+    "keywords": "Dry Cleaner, Tailor, Organic, Brooklyn, Wash & fold, Laundry",
+    "ogImage": "https://troyorganiccleaners.com/imgs/logo.png",
+    "twitterImage": "https://troyorganiccleaners.com/imgs/logo.png"
+  },
+  "navigation": {
+    "services": "Services",
+    "about": "Organic Care",
+    "location": "Location",
+    "contact": "Contact",
+    "call": "Call Now",
+    "menu": "Open navigation menu",
+    "menuClose": "Close navigation menu"
+  },
+  "hero": {
+    "eyebrow": "407 Troy Ave, Brooklyn",
+    "title": "Troy Organic Cleaners",
+    "summary": "Organic dry cleaning, wash-and-fold, careful tailoring, and free local pickup and delivery from a neighborhood shop that knows your clothes.",
+    "actions": [
+      {
+        "label": "Call Now",
+        "href": "tel:+17187718769",
+        "variant": "primary"
+      },
+      {
+        "label": "Get Directions",
+        "href": "https://www.google.com/maps/dir/?api=1&destination=407%20Troy%20Ave%2C%20Brooklyn%2C%20NY%2011213",
+        "variant": "secondary"
+      },
+      {
+        "label": "WhatsApp",
+        "href": "https://wa.me/17187718769",
+        "variant": "whatsapp"
+      }
+    ]
+  },
+  "hours": {
+    "title": "Hours",
+    "items": [
+      { "day": "Sunday", "hours": "10am - 4pm" },
+      { "day": "Monday", "hours": "8am - 7pm" },
+      { "day": "Tuesday", "hours": "8am - 7pm" },
+      { "day": "Wednesday", "hours": "8am - 7pm" },
+      { "day": "Thursday", "hours": "8am - 7pm" },
+      { "day": "Friday", "hours": "8am - 3:30pm" },
+      { "day": "Saturday", "hours": "Closed", "closed": true }
+    ]
+  },
+  "services": {
+    "eyebrow": "Garment care",
+    "title": "Services for the weekly drop-off and the important outfit.",
+    "items": [
+      {
+        "icon": "fa-tshirt",
+        "title": "Dry Cleaning",
+        "description": "Shirts, pants, dresses, suits, and everyday garments cleaned with an organic process and finished crisp."
+      },
+      {
+        "icon": "fa-soap",
+        "title": "Wash & Fold",
+        "description": "Drop off the week’s laundry and get it back clean, fresh, folded, and ready for the closet."
+      },
+      {
+        "icon": "fa-cut",
+        "title": "Custom Tailoring",
+        "description": "On-site tailoring for hems, repairs, suit adjustments, and the small fit details that change how clothing feels."
+      },
+      {
+        "icon": "fa-truck",
+        "title": "Pickup & Delivery",
+        "description": "Free local pickup and delivery makes garment care easier when your week is already full."
+      }
+    ]
+  },
+  "about": {
+    "panel": {
+      "eyebrow": "Care standards",
+      "stats": [
+        {
+          "value": "20+",
+          "label": "years of organic dry-cleaning experience"
+        },
+        {
+          "value": "4",
+          "label": "core services for everyday garment care"
+        },
+        {
+          "value": "407",
+          "label": "Troy Ave neighborhood storefront"
+        }
+      ]
+    },
+    "eyebrow": "Organic care, local standards",
+    "title": "Cleaned without harsh traditional dry-cleaning chemicals.",
+    "paragraphs": [
+      "Our cleaning process is strictly organic, chosen to be better for your clothing, better for your home, and better for the environment.",
+      "The shop also invests in skilled tailoring and professional equipment, so repairs, hems, and suit adjustments get the same level of care as the cleaning."
+    ],
+    "ownerNote": "Toli has worked in dry cleaning since he was a teenager, with more than 20 years of experience in organic garment care.",
+    "quoteLead": "I have always had a passion for fashion and quality attire.",
+    "quote": "If you treat your suits well, they will treat you well.",
+    "cite": "Meet Toli"
+  },
+  "location": {
+    "eyebrow": "Visit the shop",
+    "title": "407 Troy Ave, Brooklyn",
+    "addressLines": [
+      "Troy Organic Cleaners",
+      "407 Troy Ave",
+      "Brooklyn, NY 11213"
+    ],
+    "phoneDisplay": "(718) 771-8769",
+    "phoneLinkDisplay": "(718) 771-TROY",
+    "directionsHref": "https://www.google.com/maps/dir/?api=1&destination=407%20Troy%20Ave%2C%20Brooklyn%2C%20NY%2011213",
+    "whatsappHref": "https://wa.me/17187718769",
+    "whatsappLabel": "Message on WhatsApp"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Send a message to the shop.",
+    "submit": "Send Message",
+    "labels": {
+      "name": "Name",
+      "email": "E-mail",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message"
+    }
+  },
+  "footer": {
+    "socialTitle": "Follow us on",
+    "instagram": "https://www.instagram.com/troycleaners",
+    "facebook": "https://www.facebook.com/Troy-organic-cleaners-109448680556497/",
+    "addressLines": [
+      "Troy Organic Cleaners",
+      "407 Troy Ave",
+      "Brooklyn, NY 11213"
+    ],
+    "phoneLinkDisplay": "(718) 771-TROY"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "DryCleaningOrLaundry",
+    "@id": "https://troyorganiccleaners.com",
+    "name": "Troy Organic Cleaners",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "407 Troy Ave",
+      "addressLocality": "Brooklyn",
+      "addressRegion": "NY",
+      "postalCode": "11213",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.6644229,
+      "longitude": -73.9369867
+    },
+    "url": "https://troyorganiccleaners.com",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Sunday"
+        ],
+        "opens": "10:00",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "15:30"
+      }
+    ],
+    "telephone": "+17187718769",
+    "logo": "https://troyorganiccleaners.com/imgs/logo.png",
+    "image": "https://troyorganiccleaners.com/imgs/logo.png",
+    "sameAs": [
+      "https://www.instagram.com/troycleaners",
+      "https://www.facebook.com/Troy-organic-cleaners-109448680556497/"
+    ]
+  }
+}
