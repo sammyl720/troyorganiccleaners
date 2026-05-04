@@ -22,6 +22,8 @@ const setMobileNavOpen = (isOpen) => {
 
 const hideMobileNav = () => setMobileNavOpen(false)
 
+const encodeFormData = (form) => new URLSearchParams(new FormData(form)).toString()
+
 const setupNavigation = () => {
   burger.addEventListener('click', () => {
     setMobileNavOpen(burger.dataset.open !== 'true')
@@ -61,6 +63,75 @@ const setupScrollUp = () => {
     window.scrollTo(0, 0)
   })
   toggleUpBtn()
+}
+
+const showToast = (message, type = 'success') => {
+  let toast = document.querySelector('.toast-notification')
+
+  if (!toast) {
+    toast = document.createElement('div')
+    toast.className = 'toast-notification'
+    toast.setAttribute('role', 'status')
+    toast.setAttribute('aria-live', 'polite')
+    document.body.appendChild(toast)
+  }
+
+  toast.textContent = message
+  toast.dataset.type = type
+  toast.dataset.visible = 'true'
+
+  window.clearTimeout(showToast.timeoutId)
+  showToast.timeoutId = window.setTimeout(() => {
+    toast.dataset.visible = 'false'
+  }, 5000)
+}
+
+const setupContactForm = () => {
+  const form = document.querySelector('form[name="contact-form"]')
+
+  if (!form) {
+    return
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault()
+
+    const submit = form.querySelector('.submit-button')
+    const originalText = submit ? submit.textContent : ''
+
+    if (submit) {
+      submit.disabled = true
+      submit.textContent = 'Sending...'
+    }
+
+    try {
+      const response = await fetch(form.action || '/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData(form),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`)
+      }
+
+      form.reset()
+
+      if (window.grecaptcha) {
+        window.grecaptcha.reset()
+      }
+
+      showToast('Thanks, your message was sent.')
+    } catch (error) {
+      console.warn(error)
+      showToast('Message could not be sent. Please call the shop.', 'error')
+    } finally {
+      if (submit) {
+        submit.disabled = false
+        submit.textContent = originalText || 'Send Message'
+      }
+    }
+  })
 }
 
 const setMetaContent = (selector, value) => {
@@ -302,6 +373,7 @@ const renderSite = (content) => {
 
 setupNavigation()
 setupScrollUp()
+setupContactForm()
 
 loadContent()
   .then(renderSite)
