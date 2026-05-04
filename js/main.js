@@ -220,37 +220,18 @@ const renderContact = (content) => {
 
   if (!section) return
 
-  section.innerHTML = `
-    <div class="section-heading">
-      <p class="eyebrow">${escapeHtml(content.contact.eyebrow)}</p>
-      <h2 id="contact-title">${escapeHtml(content.contact.title)}</h2>
-    </div>
-    <form name="contact-form" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="form">
-      <input type="hidden" name="form-name" value="contact-form">
-      <div class="input-group">
-        <label for="name">${escapeHtml(content.contact.labels.name)}</label>
-        <input name="name" id="name" type="text" autocomplete="name" required>
-      </div>
-      <div class="input-group">
-        <label for="email">${escapeHtml(content.contact.labels.email)}</label>
-        <input name="email" id="email" type="email" autocomplete="email" required>
-      </div>
-      <div class="input-group">
-        <label for="phone">${escapeHtml(content.contact.labels.phone)}</label>
-        <input type="tel" name="phone" id="phone" autocomplete="tel" inputmode="tel">
-      </div>
-      <div class="input-group">
-        <label for="subject">${escapeHtml(content.contact.labels.subject)}</label>
-        <input name="subject" id="subject" type="text" autocomplete="off" maxlength="120">
-      </div>
-      <div class="input-group">
-        <label for="message">${escapeHtml(content.contact.labels.message)}</label>
-        <textarea rows="5" cols="22" name="message" id="message" autocomplete="off" required></textarea>
-      </div>
-      <div data-netlify-recaptcha="true" class="recaptcha"></div>
-      <button class="submit-button" type="submit">${escapeHtml(content.contact.submit)}</button>
-    </form>
-  `
+  const eyebrow = section.querySelector('.section-heading .eyebrow')
+  const title = section.querySelector('#contact-title')
+  const submit = section.querySelector('.submit-button')
+
+  if (eyebrow) eyebrow.textContent = content.contact.eyebrow
+  if (title) title.textContent = content.contact.title
+  if (submit) submit.textContent = content.contact.submit
+
+  Object.keys(content.contact.labels).forEach((field) => {
+    const label = section.querySelector(`label[for="${field}"]`)
+    if (label) label.textContent = content.contact.labels[field]
+  })
 }
 
 const renderFooter = (content) => {

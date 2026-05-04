@@ -53,7 +53,7 @@
   },
   "services": {
     "eyebrow": "Garment care",
-    "title": "Services for the weekly drop-off and the important outfit.",
+    "title": "From your weekly clothes to your special outfits—cleaned with care",
     "items": [
       {
         "icon": "fa-tshirt",
@@ -68,7 +68,7 @@
       {
         "icon": "fa-cut",
         "title": "Custom Tailoring",
-        "description": "On-site tailoring for hems, repairs, suit adjustments, and the small fit details that change how clothing feels."
+        "description": "On-site tailoring for everything from small repairs and hems to full alterations and custom fittings."
       },
       {
         "icon": "fa-truck",
