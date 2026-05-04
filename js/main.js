@@ -1,68 +1,329 @@
-const burger = document.getElementById('burger');
-let mobileNav = document.getElementById('mobile-nav');
+const CONTENT_URL = './content/site.json'
+
+const burger = document.getElementById('burger')
+const mobileNav = document.getElementById('mobile-nav')
 const mobileLinks = document.querySelectorAll('.menu > .nav-link')
-const dismissMessageBtn = document.getElementById("dismiss");
-burger.addEventListener('click', ()=> {
-  // console.log(mobileNav)
-  if (burger.dataset.open === 'true') {
-    burger.dataset.open = 'false'
-    hideMobileNav()
-  } else {
-    burger.dataset.open = 'true'
-    mobileNav.style.transform = 'translateX(0%)'
+const mobileNavDismissTargets = document.querySelectorAll('main, section, footer')
 
-  }
-})
-// console.log(mobileLinks)
-for (let i = 0; i < mobileLinks.length; i++) {
-  mobileLinks[i].addEventListener('click', () => {
-    hideMobileNav()
-  })
+const escapeHtml = (value = '') => String(value)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#39;')
+
+const setMobileNavOpen = (isOpen) => {
+  burger.dataset.open = isOpen ? 'true' : 'false'
+  burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+  burger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu')
+  mobileNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true')
+  mobileNav.style.transform = isOpen ? 'translateX(0%)' : 'translateX(-105%)'
 }
 
-// remove the element with id message when someone clicks the dismiss button or the user scrolls down or when the user clicks outside of the message
-const dismissMessage = () => {
-  dismissMessageBtn.addEventListener('click', () => {
-    document.getElementById('message').remove()
+const hideMobileNav = () => setMobileNavOpen(false)
+
+const setupNavigation = () => {
+  burger.addEventListener('click', () => {
+    setMobileNavOpen(burger.dataset.open !== 'true')
   })
-  document.body.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('message') && !e.target.parentNode.classList.contains('message')) {
-      document.getElementById('message').remove()
+
+  for (let i = 0; i < mobileLinks.length; i++) {
+    mobileLinks[i].addEventListener('click', hideMobileNav)
+  }
+
+  for (let i = 0; i < mobileNavDismissTargets.length; i++) {
+    mobileNavDismissTargets[i].addEventListener('click', hideMobileNav)
+  }
+}
+
+const setupScrollUp = () => {
+  const upBtn = document.querySelector('.up')
+
+  if (!upBtn) {
+    return
+  }
+
+  const toggleUpBtn = () => {
+    if (
+      document.documentElement.scrollTop < window.innerHeight - 300 ||
+      document.documentElement.scrollTop < screen.height - 300
+    ) {
+      upBtn.style.opacity = 0
+      upBtn.style.pointerEvents = 'none'
+    } else {
+      upBtn.style.opacity = 1
+      upBtn.style.pointerEvents = 'auto'
     }
-  })
-}
-
-// add the dismissMessage function to onload
-window.onload = () => {
-  dismissMessage()
-}
-
-const hideMobileNav = () => {
-  burger.dataset.open = 'false'
-
-  mobileNav.style.transform = 'translateX(-105%)'
-}
-
-const dataAnalyst = () => {
-  fetch("https://guarded-dawn-95949.herokuapp.com")
-}
-
-const upBtn = document.querySelector('.up')
-const toggleUpBtn = () => {
-  if (document.documentElement.scrollTop < window.innerHeight - 300 ||document.documentElement.scrollTop < screen.height - 300 ) {
-    upBtn.style.opacity = 0
-    upBtn.style.pointerEvents = 'none'
-
-  } else {
-    upBtn.style.opacity = 1
-    upBtn.style.pointerEvents = 'auto'
   }
-}
 
-window.addEventListener('load', (event) => {
-  dataAnalyst()
   window.onscroll = toggleUpBtn
-  upBtn.addEventListener('click', _ => {
+  upBtn.addEventListener('click', () => {
     window.scrollTo(0, 0)
   })
-})
+  toggleUpBtn()
+}
+
+const setMetaContent = (selector, value) => {
+  const el = document.querySelector(selector)
+  if (el && value) {
+    el.setAttribute('content', value)
+  }
+}
+
+const setLinkHref = (selector, value) => {
+  const el = document.querySelector(selector)
+  if (el && value) {
+    el.setAttribute('href', value)
+  }
+}
+
+const setTextAll = (selector, value) => {
+  const nodes = document.querySelectorAll(selector)
+  for (let i = 0; i < nodes.length; i++) {
+    nodes[i].textContent = value
+  }
+}
+
+const loadContent = async () => {
+  const response = await fetch(CONTENT_URL, { cache: 'no-store' })
+
+  if (!response.ok) {
+    throw new Error(`Failed to load content: ${response.status}`)
+  }
+
+  return response.json()
+}
+
+const renderHero = (content) => {
+  const hero = document.getElementById('hero')
+
+  if (!hero) return
+
+  hero.innerHTML = `
+    <div class="hero-copy">
+      <p class="eyebrow">${escapeHtml(content.hero.eyebrow)}</p>
+      <h1 id="hero-title">${escapeHtml(content.hero.title)}</h1>
+      <p class="hero-summary">${escapeHtml(content.hero.summary)}</p>
+      <div class="hero-actions">
+        ${content.hero.actions
+          .map((action) => `
+            <a
+              href="${escapeHtml(action.href)}"
+              class="button button-${escapeHtml(action.variant)}"
+            >${escapeHtml(action.label)}</a>
+          `)
+          .join('')}
+      </div>
+    </div>
+    <aside class="hours-card" aria-labelledby="hours-title">
+      <h2 id="hours-title">${escapeHtml(content.hours.title)}</h2>
+      ${content.hours.items
+        .map(
+          (item) => `
+            <div class="dayofweek${item.closed ? ' dayofweek-closed' : ''}">
+              <span>${escapeHtml(item.day)}</span>
+              <span>${escapeHtml(item.hours)}</span>
+            </div>
+          `
+        )
+        .join('')}
+    </aside>
+  `
+}
+
+const renderServices = (content) => {
+  const section = document.getElementById('services')
+
+  if (!section) return
+
+  section.innerHTML = `
+    <div class="section-heading">
+      <p class="eyebrow">${escapeHtml(content.services.eyebrow)}</p>
+      <h2 id="services-title">${escapeHtml(content.services.title)}</h2>
+    </div>
+    ${content.services.items
+      .map(
+        (item) => `
+          <div class="service-card">
+            <i class="fas ${escapeHtml(item.icon)} service-icon" aria-hidden="true"></i>
+            <h3 class="service-title">${escapeHtml(item.title)}</h3>
+            <p class="service-description">${escapeHtml(item.description)}</p>
+          </div>
+        `
+      )
+      .join('')}
+  `
+}
+
+const renderAbout = (content) => {
+  const section = document.getElementById('about')
+
+  if (!section) return
+
+  section.innerHTML = `
+    <div class="about-panel" aria-label="Troy Organic Cleaners care standards">
+      <div class="about-panel-mark" aria-hidden="true"></div>
+      <p class="eyebrow">${escapeHtml(content.about.panel.eyebrow)}</p>
+      <ul>
+        ${content.about.panel.stats
+          .map(
+            (stat) => `
+              <li>
+                <span>${escapeHtml(stat.value)}</span>
+                ${escapeHtml(stat.label)}
+              </li>
+            `
+          )
+          .join('')}
+      </ul>
+    </div>
+    <div class="about-info">
+      <p class="eyebrow">${escapeHtml(content.about.eyebrow)}</p>
+      <h2 id="about-title">${escapeHtml(content.about.title)}</h2>
+      ${content.about.paragraphs
+        .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+        .join('')}
+      <p class="owner-note">${escapeHtml(content.about.ownerNote)}</p>
+      <blockquote>
+        <span>${escapeHtml(content.about.quoteLead)}</span>
+        "${escapeHtml(content.about.quote)}"
+        <cite>${escapeHtml(content.about.cite)}</cite>
+      </blockquote>
+    </div>
+  `
+}
+
+const renderLocation = (content) => {
+  const section = document.getElementById('location')
+
+  if (!section) return
+
+  section.innerHTML = `
+    <div class="location-details">
+      <p class="eyebrow">${escapeHtml(content.location.eyebrow)}</p>
+      <h2 id="location-title">${escapeHtml(content.location.title)}</h2>
+      <address>
+        ${content.location.addressLines.map((line) => `<span>${escapeHtml(line)}</span>`).join('')}
+        <a href="tel:+17187718769" class="contact-link-phone">${escapeHtml(content.location.phoneDisplay)}</a>
+      </address>
+      <div class="location-actions">
+        <a href="${escapeHtml(content.location.directionsHref)}" target="_blank" rel="noopener noreferrer" class="button button-primary">Get Directions</a>
+        <a target="_blank" rel="noopener noreferrer" class="button button-secondary" href="${escapeHtml(content.location.whatsappHref)}">${escapeHtml(content.location.whatsappLabel)}</a>
+      </div>
+    </div>
+    <a id="map" href="${escapeHtml(content.location.directionsHref)}" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Troy Organic Cleaners"></a>
+  `
+}
+
+const renderContact = (content) => {
+  const section = document.getElementById('contact')
+
+  if (!section) return
+
+  section.innerHTML = `
+    <div class="section-heading">
+      <p class="eyebrow">${escapeHtml(content.contact.eyebrow)}</p>
+      <h2 id="contact-title">${escapeHtml(content.contact.title)}</h2>
+    </div>
+    <form name="contact-form" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="form">
+      <input type="hidden" name="form-name" value="contact-form">
+      <div class="input-group">
+        <label for="name">${escapeHtml(content.contact.labels.name)}</label>
+        <input name="name" id="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="input-group">
+        <label for="email">${escapeHtml(content.contact.labels.email)}</label>
+        <input name="email" id="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="input-group">
+        <label for="phone">${escapeHtml(content.contact.labels.phone)}</label>
+        <input type="tel" name="phone" id="phone" autocomplete="tel" inputmode="tel">
+      </div>
+      <div class="input-group">
+        <label for="subject">${escapeHtml(content.contact.labels.subject)}</label>
+        <input name="subject" id="subject" type="text" autocomplete="off" maxlength="120">
+      </div>
+      <div class="input-group">
+        <label for="message">${escapeHtml(content.contact.labels.message)}</label>
+        <textarea rows="5" cols="22" name="message" id="message" autocomplete="off" required></textarea>
+      </div>
+      <div data-netlify-recaptcha="true" class="recaptcha"></div>
+      <button class="submit-button" type="submit">${escapeHtml(content.contact.submit)}</button>
+    </form>
+  `
+}
+
+const renderFooter = (content) => {
+  const footer = document.getElementById('site-footer')
+
+  if (!footer) return
+
+  footer.innerHTML = `
+    <div class="container">
+      <div class="follow-us">
+        <h4 class="footer-social-title">${escapeHtml(content.footer.socialTitle)}</h4>
+        <a href="${escapeHtml(content.footer.instagram)}" target="_blank" rel="noopener noreferrer" aria-label="Follow Troy Organic Cleaners on Instagram">
+          <i class="fab fa-instagram social-icon social-icon-light social-icon-footer-first"></i>
+        </a>
+        <a href="${escapeHtml(content.footer.facebook)}" target="_blank" rel="noopener noreferrer" aria-label="Follow Troy Organic Cleaners on Facebook">
+          <i class="fab fa-facebook social-icon social-icon-light social-icon-footer"></i>
+        </a>
+      </div>
+      <div class="contact-info">
+        <h1 class="visually-hidden">Contact Information</h1>
+        <address>
+          ${content.footer.addressLines.map((line) => `<span>${escapeHtml(line)}</span>`).join('')}
+          <a href="tel:+17187718769" class="contact-link-phone">${escapeHtml(content.footer.phoneLinkDisplay)}</a>
+        </address>
+      </div>
+    </div>
+  `
+}
+
+const renderNavigation = (content) => {
+  setTextAll('.services-link', content.navigation.services)
+  setTextAll('.about-link', content.navigation.about)
+  setTextAll('.location-link', content.navigation.location)
+  setTextAll('.contact-link', content.navigation.contact)
+  setTextAll('.nav-cta', content.navigation.call)
+}
+
+const renderSeo = (content) => {
+  document.title = content.seo.title
+  setMetaContent("meta[name='description']", content.seo.description)
+  setMetaContent("meta[name='theme-color']", content.seo.themeColor)
+  setMetaContent("meta[property='og:title']", content.seo.title)
+  setMetaContent("meta[property='og:description']", content.seo.description)
+  setMetaContent("meta[property='og:url']", content.seo.canonical)
+  setMetaContent("meta[property='og:image']", content.seo.ogImage)
+  setMetaContent("meta[name='twitter:title']", content.seo.title)
+  setMetaContent("meta[name='twitter:description']", content.seo.description)
+  setMetaContent("meta[name='twitter:image']", content.seo.twitterImage)
+  setMetaContent("meta[name='keywords']", content.seo.keywords)
+  setLinkHref("link[rel='canonical']", content.seo.canonical)
+
+  const schemaData = document.getElementById('schema-data')
+  if (schemaData) {
+    schemaData.textContent = JSON.stringify(content.schema, null, 2)
+  }
+}
+
+const renderSite = (content) => {
+  renderSeo(content)
+  renderNavigation(content)
+  renderHero(content)
+  renderServices(content)
+  renderAbout(content)
+  renderLocation(content)
+  renderContact(content)
+  renderFooter(content)
+}
+
+setupNavigation()
+setupScrollUp()
+
+loadContent()
+  .then(renderSite)
+  .catch((error) => {
+    console.warn('Site content failed to load; using HTML fallback.', error)
+  })
