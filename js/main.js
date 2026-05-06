@@ -258,7 +258,6 @@ const renderAbout = (content) => {
       <blockquote>
         <span>${escapeHtml(content.about.quoteLead)}</span>
         "${escapeHtml(content.about.quote)}"
-        <cite>${escapeHtml(content.about.cite)}</cite>
       </blockquote>
     </div>
   `
