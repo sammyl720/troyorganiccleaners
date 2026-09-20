@@ -1,0 +1,22 @@
+[build]
+  command = "npm ci && npm ci --prefix admin && npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "same-origin"
+    X-Frame-Options = "DENY"
+
+# Public browser configuration. Database permissions are enforced by Supabase RLS.
+[build.environment]
+  NODE_VERSION = "24"
+  VITE_SUPABASE_URL = "https://yonpmebxbpmyowjfqpyz.supabase.co"
+  VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_ssWmIMHoA2iZSMGw9X9B2w_cUubpFxC"

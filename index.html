@@ -69,6 +69,7 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <title>Troy Organic Cleaners</title>
+      <link rel="stylesheet" href="./css/cms.css">
   </head>
 
   <body>
@@ -126,6 +127,7 @@
         </div>
       </nav>
     </header>
+    <div id="site-banner" class="site-banner" hidden></div>
 
     <main id="main" class="main">
       <section id="hero" class="hero" aria-labelledby="hero-title">
@@ -159,6 +161,7 @@
         </div>
         <aside class="hours-card" aria-labelledby="hours-title">
           <h2 id="hours-title">Hours</h2>
+          <div id="business-hours">
           <div class="dayofweek">
             <span>Sunday</span> <span>10am - 4pm</span>
           </div>
@@ -179,6 +182,7 @@
           </div>
           <div class="dayofweek dayofweek-closed">
             <span>Saturday</span> <span>Closed</span>
+          </div>
           </div>
         </aside>
       </section>
@@ -227,6 +231,11 @@
           week is already full.
         </p>
       </div>
+    </section>
+
+    <section id="pricing" class="cms-pricing" aria-labelledby="pricing-title" hidden>
+      <h2 id="pricing-title">Services &amp; prices</h2>
+      <div id="service-prices"></div>
     </section>
 
     <section id="about" class="about-section" aria-labelledby="about-title">
@@ -418,5 +427,7 @@
       </div>
     </footer>
     <script src="./js/main.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/cms.js"></script>
   </body>
 </html>
