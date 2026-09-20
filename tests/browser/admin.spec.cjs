@@ -136,8 +136,8 @@ test("owner edits hours, prices, visibility, and banner then signs out", async (
   await page.getByRole("button", { name: "+ Add Service" }).click();
   await page.getByLabel("Name", { exact: true }).fill("Wash & Fold");
   await page.getByLabel("Slug", { exact: true }).fill("wash-fold");
-  await page.getByLabel("Category", { exact: true }).selectOption("1");
-  await page.getByLabel("Pricing type").selectOption("per_pound");
+  await page.getByRole("combobox", { name: "Category", exact: true }).selectOption("1");
+  await page.getByRole("combobox", { name: "Pricing type", exact: true }).selectOption("per_pound");
   await page.getByLabel("Price ($)").fill("2.25");
   await page.getByRole("button", { name: "Save Service" }).click();
   await expect(
