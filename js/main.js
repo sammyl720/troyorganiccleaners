@@ -156,7 +156,7 @@ const setTextAll = (selector, value) => {
 }
 
 const loadContent = async () => {
-  const response = await fetch(CONTENT_URL, { cache: 'no-store' })
+  const response = await fetch(CONTENT_URL, { cache: 'no-store', signal: AbortSignal.timeout(8000) })
 
   if (!response.ok) {
     throw new Error(`Failed to load content: ${response.status}`)
@@ -188,6 +188,7 @@ const renderHero = (content) => {
     </div>
     <aside class="hours-card" aria-labelledby="hours-title">
       <h2 id="hours-title">${escapeHtml(content.hours.title)}</h2>
+      <div id="business-hours">
       ${content.hours.items
         .map(
           (item) => `
@@ -198,6 +199,7 @@ const renderHero = (content) => {
           `
         )
         .join('')}
+      </div>
     </aside>
   `
 }
@@ -374,7 +376,7 @@ setupNavigation()
 setupScrollUp()
 setupContactForm()
 
-loadContent()
+window.troyContentReady = loadContent()
   .then(renderSite)
   .catch((error) => {
     console.warn('Site content failed to load; using HTML fallback.', error)
